@@ -44,12 +44,12 @@ A fully functional 8-bit soft-core CPU implemented in Verilog and synthesised on
 
 | Module | File | Function |
 |---|---|---|
-| Machine_Code_ROM | `machine_code_rom_1.v` | 128-bit LUT-ROM; PC + master phase counter |
-| Instruction_Register | `intruction_register1.v` | Latches opcode, flags, address, immediate |
-| Instruction_Decoder | `intruction_decoder1.v` | Control unit; generates timed enable signals |
-| Mul_Reg_to_ALU | `mul_to_alu1.v` | 2-to-1 operand MUX (immediate vs register) |
-| ALU_Module | `alu_1.v` | 8-bit arithmetic/logic; registered output |
-| Data_Register | `data_register_module_0.v` | 8×8 register file |
+| Machine_Code_ROM | `Machine_Code_Rom_Module.v` | 128-bit LUT-ROM; PC + master phase counter |
+| Instruction_Register | `Intruction_Register_Module.v` | Latches opcode, flags, address, immediate |
+| Instruction_Decoder | `Intruction_Decoder_Module.v` | Control unit; generates timed enable signals |
+| Mul_Reg_to_ALU | `Mul_Reg_to_Alu_Module.v` | 2-to-1 operand MUX (immediate vs register) |
+| ALU_Module | `ALU_Module.v` | 8-bit arithmetic/logic; registered output |
+| Data_Register | `Data_Register_Module.v` | 8×8 register file |
 | bin_to_bcd | `bin_to_bcd.v` | Double-Dabble combinational converter |
 | hex_to_7seg | `hex_to_7seg.v` | BCD → 7-segment pattern (active-low) |
 | seven_seg_mux | `sen_seg_mux.v` | Time-multiplexed 3-digit scan @ ~381 Hz |
