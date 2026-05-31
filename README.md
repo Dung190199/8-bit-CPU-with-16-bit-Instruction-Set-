@@ -84,15 +84,9 @@ Verified an 8-bit CPU (9-phase gated-clock pipeline, 3-bit ISA, 8×8-bit registe
 -	 Verified 5 RTL fixes via dedicated test cases: HLT PC freeze (opcode guard on instruction_counter), phase-skew fix (single master_phase broadcast from ROM), check_* observability mapping; confirmed reset clears all state across all 8 pipeline phases.
 
 ## RTL Issues Identified
-
-| Severity | Issue | Location |
-|---|---|---|
-| 🔴 Critical | `initial` blocks in synthesisable logic | `mul_to_alu1.v`, `alu_1.v` |
-| 🔴 Critical | Latch inference — incomplete `always` branch | `mul_to_alu1.v` |
-| 🔴 Critical | `parameter` used instead of `localparam` for opcode constants | `alu_1.v` |
-| 🟡 Medium | Missing `begin..end` in register-file reset block (synthesis/sim mismatch risk) | `data_register_module_0.v` |
-| 🟡 Medium | Nine independent phase counters — no global synchronisation | All modules |
-| 🟡 Medium | `instruction_counter` does not freeze on HLT decode | `machine_code_rom_1.v` |
+Fix RTL decoder (P0) — xóa MOV write-back khỏi CLK7
+Fix TC12 unsigned mod (P1) — để random phase coverage thực sự random đúng
+Re-run simulation sau fix → A7 phải = 0 failures, TC12 phải hit phases 1–8 đủ
 
 ---
 
