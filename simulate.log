@@ -1,0 +1,1482 @@
+Time resolution is 1 ps
+================================================================
+  tb_CPU_full - Vivado 2024.2
+  docx 6.2 fixes: YEL4/5/6, ORG7/8 verified
+  CLK=10ns  PIPE=9  SETTLE=3
+================================================================
+
+--- TC01: Reset assertion ---
+[PASS] TC1                                       result_out=0x00 during RESET  exp=0x00(   0)  got=0x00(   0)
+[PASS] TC2                                       databus   =0x00 during RESET  exp=0x00(   0)  got=0x00(   0)
+
+--- TC02: Full golden trace (all 8 instructions) ---
+[MON] t=              105000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PIPE] t=              125000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=              135000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=              145000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=              155000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=              165000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=              175000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=              185000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=185000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=              195000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=              195000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PASS] TC3                                  ROM[0] MOV R0,60 ÿÿÿâÿ’ 0x3C( 60)  exp=0x3c(  60)  got=0x3c(  60)
+[PIPE] t=              245000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=              255000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=              265000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=              275000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=              285000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=              295000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=              305000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=              315000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=              325000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PASS] TC4                                  ROM[1] ADD R0,70 ÿÿÿâÿ’ 0x82(130)  exp=0x82(-126)  got=0x82(-126)
+[PIPE] t=              365000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=              375000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=              385000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=              395000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=              405000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=              415000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=              425000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=              435000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=2
+[SCB PASS] write-back #2: got=0xce  exp=0xce
+[MON] t=              445000 | cpu_en=0 | databus=0xb4 | result_out=0xce( -50) | write-back in settle window
+[PASS] TC5                                  ROM[2] SUB R0,180ÿÿÿâÿ’ 0xCE(-50)  exp=0xce( -50)  got=0xce( -50)
+[PIPE] t=              485000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=              495000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=              505000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=              515000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=              525000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=3
+[PIPE] t=              535000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=3
+[PIPE] t=              545000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=              555000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=3
+[SCB PASS] write-back #3: got=0x32  exp=0x32
+[MON] t=              565000 | cpu_en=0 | databus=0x00 | result_out=0x32(  50) | write-back in settle window
+[PASS] TC6                                  ROM[3] ABS R0    ÿÿÿâÿ’ 0x32( 50)  exp=0x32(  50)  got=0x32(  50)
+[PIPE] t=              605000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=              615000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=              625000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=              635000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=              645000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=4
+[PIPE] t=              655000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=4
+[PIPE] t=              665000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=              675000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=4
+[SCB PASS] write-back #4: got=0xcd  exp=0xcd
+[MON] t=              685000 | cpu_en=0 | databus=0x00 | result_out=0xcd( -51) | write-back in settle window
+[PASS] TC7                                  ROM[4] NOT R0    ÿÿÿâÿ’ 0xCD(205)  exp=0xcd( -51)  got=0xcd( -51)
+[PIPE] t=              725000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=              735000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=              745000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=              755000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=              765000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=5
+[PIPE] t=              775000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=5
+[PIPE] t=              785000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=              795000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=5
+[SCB PASS] write-back #5: got=0x0d  exp=0x0d
+[MON] t=              805000 | cpu_en=0 | databus=0x0f | result_out=0x0d(  13) | write-back in settle window
+[PASS] TC8                                  ROM[5] AND R0,0x0ÿÿÿâÿ’ 0x0D( 13)  exp=0x0d(  13)  got=0x0d(  13)
+[PIPE] t=              845000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=              855000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=              865000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=              875000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=              885000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=6
+[PIPE] t=              895000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=6
+[PIPE] t=              905000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=              915000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=6
+[SCB PASS] write-back #6: got=0xf3  exp=0xf3
+[MON] t=              925000 | cpu_en=0 | databus=0x00 | result_out=0xf3( -13) | write-back in settle window
+[PASS] TC9                                  ROM[6] NEG R0    ÿÿÿâÿ’ 0xF3(-13)  exp=0xf3( -13)  got=0xf3( -13)
+[PIPE] t=              965000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=              975000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=              985000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=              995000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             1005000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             1015000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             1025000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             1035000 | phase=8 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PASS] TC10                                ROM[7] HLT        ÿÿÿ†’ 0xF3(noWB)  exp=0xf3( -13)  got=0xf3( -13)
+
+--- TC03: NOT standalone ---
+[MON] t=             1115000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PIPE] t=             1135000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             1145000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             1155000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             1165000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             1175000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             1185000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             1195000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=1195000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=             1205000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=             1205000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=             1255000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             1265000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             1275000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             1285000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             1295000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=             1305000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=             1315000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             1325000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=             1335000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=             1375000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             1385000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             1395000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             1405000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             1415000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=             1425000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=             1435000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             1445000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=2
+[SCB PASS] write-back #2: got=0xce  exp=0xce
+[MON] t=             1455000 | cpu_en=0 | databus=0xb4 | result_out=0xce( -50) | write-back in settle window
+[PIPE] t=             1495000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             1505000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             1515000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             1525000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             1535000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=3
+[PIPE] t=             1545000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=3
+[PIPE] t=             1555000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             1565000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=3
+[SCB PASS] write-back #3: got=0x32  exp=0x32
+[MON] t=             1575000 | cpu_en=0 | databus=0x00 | result_out=0x32(  50) | write-back in settle window
+[PIPE] t=             1615000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             1625000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             1635000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             1645000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             1655000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=4
+[PIPE] t=             1665000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=4
+[PIPE] t=             1675000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             1685000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=4
+[SCB PASS] write-back #4: got=0xcd  exp=0xcd
+[MON] t=             1695000 | cpu_en=0 | databus=0x00 | result_out=0xcd( -51) | write-back in settle window
+[PASS] TC11                                                 NOT: ~0x32 = 0xCD  exp=0xcd( -51)  got=0xcd( -51)
+
+--- TC04: AND nibble mask ---
+[MON] t=             1765000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PIPE] t=             1785000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             1795000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             1805000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             1815000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             1825000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             1835000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             1845000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=1845000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=             1855000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=             1855000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=             1905000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             1915000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             1925000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             1935000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             1945000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=             1955000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=             1965000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             1975000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=             1985000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=             2025000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             2035000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             2045000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             2055000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             2065000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=             2075000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=             2085000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             2095000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=2
+[SCB PASS] write-back #2: got=0xce  exp=0xce
+[MON] t=             2105000 | cpu_en=0 | databus=0xb4 | result_out=0xce( -50) | write-back in settle window
+[PIPE] t=             2145000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             2155000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             2165000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             2175000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             2185000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=3
+[PIPE] t=             2195000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=3
+[PIPE] t=             2205000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             2215000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=3
+[SCB PASS] write-back #3: got=0x32  exp=0x32
+[MON] t=             2225000 | cpu_en=0 | databus=0x00 | result_out=0x32(  50) | write-back in settle window
+[PIPE] t=             2265000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             2275000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             2285000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             2295000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             2305000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=4
+[PIPE] t=             2315000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=4
+[PIPE] t=             2325000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             2335000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=4
+[SCB PASS] write-back #4: got=0xcd  exp=0xcd
+[MON] t=             2345000 | cpu_en=0 | databus=0x00 | result_out=0xcd( -51) | write-back in settle window
+[PIPE] t=             2385000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             2395000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             2405000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             2415000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             2425000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=5
+[PIPE] t=             2435000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=5
+[PIPE] t=             2445000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             2455000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=5
+[SCB PASS] write-back #5: got=0x0d  exp=0x0d
+[MON] t=             2465000 | cpu_en=0 | databus=0x0f | result_out=0x0d(  13) | write-back in settle window
+[PASS] TC12                                           AND: 0xCD & 0x0F = 0x0D  exp=0x0d(  13)  got=0x0d(  13)
+[PASS] TC13                                          AND: upper nibble = 0x00  exp=0x00(   0)  got=0x00(   0)
+
+--- TC05: NEG 2s complement ---
+[MON] t=             2535000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PIPE] t=             2555000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             2565000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             2575000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             2585000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             2595000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             2605000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             2615000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=2615000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=             2625000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=             2625000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=             2675000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             2685000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             2695000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             2705000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             2715000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=             2725000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=             2735000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             2745000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=             2755000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=             2795000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             2805000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             2815000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             2825000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             2835000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=             2845000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=             2855000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             2865000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=2
+[SCB PASS] write-back #2: got=0xce  exp=0xce
+[MON] t=             2875000 | cpu_en=0 | databus=0xb4 | result_out=0xce( -50) | write-back in settle window
+[PIPE] t=             2915000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             2925000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             2935000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             2945000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             2955000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=3
+[PIPE] t=             2965000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=3
+[PIPE] t=             2975000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             2985000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=3
+[SCB PASS] write-back #3: got=0x32  exp=0x32
+[MON] t=             2995000 | cpu_en=0 | databus=0x00 | result_out=0x32(  50) | write-back in settle window
+[PIPE] t=             3035000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             3045000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             3055000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             3065000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             3075000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=4
+[PIPE] t=             3085000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=4
+[PIPE] t=             3095000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             3105000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=4
+[SCB PASS] write-back #4: got=0xcd  exp=0xcd
+[MON] t=             3115000 | cpu_en=0 | databus=0x00 | result_out=0xcd( -51) | write-back in settle window
+[PIPE] t=             3155000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             3165000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             3175000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             3185000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             3195000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=5
+[PIPE] t=             3205000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=5
+[PIPE] t=             3215000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             3225000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=5
+[SCB PASS] write-back #5: got=0x0d  exp=0x0d
+[MON] t=             3235000 | cpu_en=0 | databus=0x0f | result_out=0x0d(  13) | write-back in settle window
+[PIPE] t=             3275000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             3285000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             3295000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             3305000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             3315000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=6
+[PIPE] t=             3325000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=6
+[PIPE] t=             3335000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             3345000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=6
+[SCB PASS] write-back #6: got=0xf3  exp=0xf3
+[MON] t=             3355000 | cpu_en=0 | databus=0x00 | result_out=0xf3( -13) | write-back in settle window
+[PASS] TC14                                               NEG: ~0x0D+1 = 0xF3  exp=0xf3( -13)  got=0xf3( -13)
+[PASS] TC15                                      NEG: 0x0D + NEG(0x0D) = 0x00  exp=0x00(   0)  got=0x00(   0)
+
+--- TC06: HLT no write-back ---
+[MON] t=             3425000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PIPE] t=             3445000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             3455000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             3465000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             3475000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             3485000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             3495000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             3505000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=3505000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=             3515000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=             3515000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=             3565000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             3575000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             3585000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             3595000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             3605000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=             3615000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=             3625000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             3635000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=             3645000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=             3685000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             3695000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             3705000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             3715000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             3725000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=             3735000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=             3745000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             3755000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=2
+[SCB PASS] write-back #2: got=0xce  exp=0xce
+[MON] t=             3765000 | cpu_en=0 | databus=0xb4 | result_out=0xce( -50) | write-back in settle window
+[PIPE] t=             3805000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             3815000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             3825000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             3835000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             3845000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=3
+[PIPE] t=             3855000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=3
+[PIPE] t=             3865000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             3875000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=3
+[SCB PASS] write-back #3: got=0x32  exp=0x32
+[MON] t=             3885000 | cpu_en=0 | databus=0x00 | result_out=0x32(  50) | write-back in settle window
+[PIPE] t=             3925000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             3935000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             3945000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             3955000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             3965000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=4
+[PIPE] t=             3975000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=4
+[PIPE] t=             3985000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             3995000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=4
+[SCB PASS] write-back #4: got=0xcd  exp=0xcd
+[MON] t=             4005000 | cpu_en=0 | databus=0x00 | result_out=0xcd( -51) | write-back in settle window
+[PIPE] t=             4045000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             4055000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             4065000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             4075000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             4085000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=5
+[PIPE] t=             4095000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=5
+[PIPE] t=             4105000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             4115000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=5
+[SCB PASS] write-back #5: got=0x0d  exp=0x0d
+[MON] t=             4125000 | cpu_en=0 | databus=0x0f | result_out=0x0d(  13) | write-back in settle window
+[PIPE] t=             4165000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             4175000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             4185000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             4195000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             4205000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=6
+[PIPE] t=             4215000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=6
+[PIPE] t=             4225000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             4235000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=6
+[SCB PASS] write-back #6: got=0xf3  exp=0xf3
+[MON] t=             4245000 | cpu_en=0 | databus=0x00 | result_out=0xf3( -13) | write-back in settle window
+[PIPE] t=             4285000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             4295000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             4305000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             4315000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             4325000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             4335000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             4345000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             4355000 | phase=8 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PASS] TC16                                          HLT: R0 unchanged = 0xF3  exp=0xf3( -13)  got=0xf3( -13)
+
+--- TC07: YEL4 - HLT freezes PC (no advance) ---
+[MON] t=             4435000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PIPE] t=             4455000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             4465000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             4475000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             4485000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             4495000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             4505000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             4515000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=4515000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=             4525000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=             4525000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=             4575000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             4585000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             4595000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             4605000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             4615000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=             4625000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=             4635000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             4645000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=             4655000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=             4695000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             4705000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             4715000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             4725000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             4735000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=             4745000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=             4755000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             4765000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=2
+[SCB PASS] write-back #2: got=0xce  exp=0xce
+[MON] t=             4775000 | cpu_en=0 | databus=0xb4 | result_out=0xce( -50) | write-back in settle window
+[PIPE] t=             4815000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             4825000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             4835000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             4845000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             4855000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=3
+[PIPE] t=             4865000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=3
+[PIPE] t=             4875000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             4885000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=3
+[SCB PASS] write-back #3: got=0x32  exp=0x32
+[MON] t=             4895000 | cpu_en=0 | databus=0x00 | result_out=0x32(  50) | write-back in settle window
+[PIPE] t=             4935000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             4945000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             4955000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             4965000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             4975000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=4
+[PIPE] t=             4985000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=4
+[PIPE] t=             4995000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             5005000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=4
+[SCB PASS] write-back #4: got=0xcd  exp=0xcd
+[MON] t=             5015000 | cpu_en=0 | databus=0x00 | result_out=0xcd( -51) | write-back in settle window
+[PIPE] t=             5055000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             5065000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             5075000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             5085000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             5095000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=5
+[PIPE] t=             5105000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=5
+[PIPE] t=             5115000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             5125000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=5
+[SCB PASS] write-back #5: got=0x0d  exp=0x0d
+[MON] t=             5135000 | cpu_en=0 | databus=0x0f | result_out=0x0d(  13) | write-back in settle window
+[PIPE] t=             5175000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             5185000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             5195000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             5205000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             5215000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=6
+[PIPE] t=             5225000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=6
+[PIPE] t=             5235000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             5245000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=6
+[SCB PASS] write-back #6: got=0xf3  exp=0xf3
+[MON] t=             5255000 | cpu_en=0 | databus=0x00 | result_out=0xf3( -13) | write-back in settle window
+[PIPE] t=             5295000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             5305000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             5315000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             5325000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             5335000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             5345000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             5355000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             5365000 | phase=8 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PASS] TC17                                                After HLT: R0=0xF3  exp=0xf3( -13)  got=0xf3( -13)
+[PIPE] t=             5415000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             5425000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             5435000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             5445000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             5455000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             5465000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             5475000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             5485000 | phase=8 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PASS] TC18                      1 cycle after HLT: R0 still 0xF3 (PC frozen)  exp=0xf3( -13)  got=0xf3( -13)
+[PIPE] t=             5535000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             5545000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             5555000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             5565000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             5575000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             5585000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             5595000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             5605000 | phase=8 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PASS] TC19                     2 cycles after HLT: R0 still 0xF3 (PC frozen)  exp=0xf3( -13)  got=0xf3( -13)
+
+--- TC07b: Reset after HLT restarts from MOV ---
+[MON] t=             5685000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PIPE] t=             5705000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             5715000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             5725000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             5735000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             5745000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             5755000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             5765000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=5765000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=             5775000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=             5775000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PASS] TC20                                 Post-HLT reset: ROM[0] MOV = 0x3C  exp=0x3c(  60)  got=0x3c(  60)
+
+--- TC08: cpu_en gate ---
+[MON] t=             5855000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC21                                    40cy cpu_en=0: result_out=0x00  exp=0x00(   0)  got=0x00(   0)
+[PASS] TC22                                    40cy cpu_en=0: databus   =0x00  exp=0x00(   0)  got=0x00(   0)
+
+--- TC09: Mid-execution reset ---
+[PIPE] t=             6325000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             6335000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             6345000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             6355000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             6365000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             6375000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             6385000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=6385000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=             6395000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=             6395000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=             6445000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             6455000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             6465000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             6475000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             6485000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=             6495000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=             6505000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             6515000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=             6525000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=             6565000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             6575000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             6585000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             6595000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             6605000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=             6615000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=             6625000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             6635000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=2
+[SCB PASS] write-back #2: got=0xce  exp=0xce
+[MON] t=             6645000 | cpu_en=0 | databus=0xb4 | result_out=0xce( -50) | write-back in settle window
+[PIPE] t=             6685000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             6695000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             6705000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             6715000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             6725000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=3
+[PIPE] t=             6735000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=3
+[PIPE] t=             6745000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             6755000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=3
+[SCB PASS] write-back #3: got=0x32  exp=0x32
+[MON] t=             6765000 | cpu_en=0 | databus=0x00 | result_out=0x32(  50) | write-back in settle window
+[PIPE] t=             6805000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             6815000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             6825000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[MON] t=             6855000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC23                                            Mid-NOT reset: R0=0x00  exp=0x00(   0)  got=0x00(   0)
+
+--- TC10: ORG8 - check_* real status ---
+[PASS] TC24                             check_mul = 1 (comb mux always valid)  exp=1  got=1
+[PASS] TC25                               check_data_register = 0 after reset  exp=0  got=0
+[PASS] TC26                            check_IR = 0 before first instr loaded  exp=0  got=0
+[PIPE] t=             6945000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             6955000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             6965000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             6975000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             6985000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             6995000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             7005000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=7005000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=             7015000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=             7015000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PASS] TC27                             check_IR = 1 after first instr loaded  exp=1  got=1
+[PASS] TC28                         check_data_register = 1 after first write  exp=1  got=1
+[PASS] TC29                                check_alu = 0 between instructions  exp=0  got=0
+
+--- TC11: Timing stress - 3 independent runs ---
+[MON] t=             7095000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PIPE] t=             7115000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             7125000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             7135000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             7145000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             7155000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             7165000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             7175000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=7175000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=             7185000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=             7185000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=             7235000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             7245000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             7255000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             7265000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             7275000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=             7285000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=             7295000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             7305000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=             7315000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=             7355000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             7365000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             7375000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             7385000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             7395000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=             7405000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=             7415000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             7425000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=2
+[SCB PASS] write-back #2: got=0xce  exp=0xce
+[MON] t=             7435000 | cpu_en=0 | databus=0xb4 | result_out=0xce( -50) | write-back in settle window
+[PIPE] t=             7475000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             7485000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             7495000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             7505000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             7515000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=3
+[PIPE] t=             7525000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=3
+[PIPE] t=             7535000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             7545000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=3
+[SCB PASS] write-back #3: got=0x32  exp=0x32
+[MON] t=             7555000 | cpu_en=0 | databus=0x00 | result_out=0x32(  50) | write-back in settle window
+[PIPE] t=             7595000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             7605000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             7615000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             7625000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             7635000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=4
+[PIPE] t=             7645000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=4
+[PIPE] t=             7655000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             7665000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=4
+[SCB PASS] write-back #4: got=0xcd  exp=0xcd
+[MON] t=             7675000 | cpu_en=0 | databus=0x00 | result_out=0xcd( -51) | write-back in settle window
+[PIPE] t=             7715000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             7725000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             7735000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             7745000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             7755000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=5
+[PIPE] t=             7765000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=5
+[PIPE] t=             7775000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             7785000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=5
+[SCB PASS] write-back #5: got=0x0d  exp=0x0d
+[MON] t=             7795000 | cpu_en=0 | databus=0x0f | result_out=0x0d(  13) | write-back in settle window
+[PIPE] t=             7835000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             7845000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             7855000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             7865000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             7875000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=6
+[PIPE] t=             7885000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=6
+[PIPE] t=             7895000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             7905000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=6
+[SCB PASS] write-back #6: got=0xf3  exp=0xf3
+[MON] t=             7915000 | cpu_en=0 | databus=0x00 | result_out=0xf3( -13) | write-back in settle window
+[PIPE] t=             7955000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             7965000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             7975000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             7985000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             7995000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             8005000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             8015000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             8025000 | phase=8 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PASS] TC30                                             Run1 [7]=HLT: R0=0xF3  exp=0xf3( -13)  got=0xf3( -13)
+[MON] t=             8105000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PIPE] t=             8125000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             8135000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             8145000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             8155000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             8165000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             8175000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             8185000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=8185000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=             8195000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=             8195000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=             8245000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             8255000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             8265000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             8275000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             8285000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=             8295000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=             8305000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             8315000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=             8325000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=             8365000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             8375000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             8385000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             8395000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             8405000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=             8415000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=             8425000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             8435000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=2
+[SCB PASS] write-back #2: got=0xce  exp=0xce
+[MON] t=             8445000 | cpu_en=0 | databus=0xb4 | result_out=0xce( -50) | write-back in settle window
+[PIPE] t=             8485000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             8495000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             8505000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             8515000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             8525000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=3
+[PIPE] t=             8535000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=3
+[PIPE] t=             8545000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             8555000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=3
+[SCB PASS] write-back #3: got=0x32  exp=0x32
+[MON] t=             8565000 | cpu_en=0 | databus=0x00 | result_out=0x32(  50) | write-back in settle window
+[PIPE] t=             8605000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             8615000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             8625000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             8635000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             8645000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=4
+[PIPE] t=             8655000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=4
+[PIPE] t=             8665000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=4
+[PIPE] t=             8675000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=4
+[SCB PASS] write-back #4: got=0xcd  exp=0xcd
+[MON] t=             8685000 | cpu_en=0 | databus=0x00 | result_out=0xcd( -51) | write-back in settle window
+[PIPE] t=             8725000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             8735000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             8745000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             8755000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             8765000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=5
+[PIPE] t=             8775000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=5
+[PIPE] t=             8785000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=5
+[PIPE] t=             8795000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=5
+[SCB PASS] write-back #5: got=0x0d  exp=0x0d
+[MON] t=             8805000 | cpu_en=0 | databus=0x0f | result_out=0x0d(  13) | write-back in settle window
+[PIPE] t=             8845000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             8855000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             8865000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             8875000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             8885000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=6
+[PIPE] t=             8895000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=6
+[PIPE] t=             8905000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=6
+[PIPE] t=             8915000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=6
+[SCB PASS] write-back #6: got=0xf3  exp=0xf3
+[MON] t=             8925000 | cpu_en=0 | databus=0x00 | result_out=0xf3( -13) | write-back in settle window
+[PIPE] t=             8965000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             8975000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             8985000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             8995000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             9005000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             9015000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             9025000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PIPE] t=             9035000 | phase=8 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=7
+[PASS] TC31                                             Run2 [7]=HLT: R0=0xF3  exp=0xf3( -13)  got=0xf3( -13)
+[MON] t=             9115000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PIPE] t=             9135000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             9145000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             9155000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             9165000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             9175000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             9185000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             9195000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=9195000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=             9205000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=             9205000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=             9255000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             9265000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             9275000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             9285000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             9295000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=             9305000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=             9315000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             9325000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=             9335000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=             9375000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             9385000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             9395000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             9405000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             9415000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=             9425000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=             9435000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             9445000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=2
+[SCB PASS] write-back #2: got=0xce  exp=0xce
+[MON] t=             9455000 | cpu_en=0 | databus=0xb4 | result_out=0xce( -50) | write-back in settle window
+[PIPE] t=             9495000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             9505000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             9515000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             9525000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             9535000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=1 RdB=0 | PC=3
+[PIPE] t=             9545000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=1 RdB=0 | PC=3
+[PIPE] t=             9555000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=3
+[PIPE] t=             9565000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=3
+[SCB PASS] write-back #3: got=0x32  exp=0x32
+[MON] t=             9575000 | cpu_en=0 | databus=0x00 | result_out=0x32(  50) | write-back in settle window
+[PASS] TC32                                             Run3 [3]=ABS: R0=0x32  exp=0x32(  50)  got=0x32(  50)
+
+--- TC12 [v2]: Constrained-random reset phase sweep ---
+[MON] t=             9645000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PIPE] t=             9665000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             9675000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             9685000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             9695000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             9705000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             9715000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=             9725000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=9725000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=             9735000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=             9735000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=             9785000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             9795000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             9805000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             9815000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             9825000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=             9835000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=             9845000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=             9855000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=             9865000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=             9905000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             9915000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             9925000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             9935000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=             9945000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=2
+[MON] t=             9975000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC33                                 TC12: mid-instr resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC12]   run=0  reset_at_phase=6  result=0x00               (clean)
+[PIPE] t=            10065000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            10075000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            10085000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            10095000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            10105000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            10115000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            10125000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=10125000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            10135000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            10135000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            10185000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            10195000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            10205000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            10215000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            10225000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            10235000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            10245000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            10255000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            10265000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=            10305000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            10315000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            10325000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            10335000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[MON] t=            10365000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC34                                 TC12: mid-instr resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC12]   run=1  reset_at_phase=5  result=0x00               (clean)
+[PIPE] t=            10455000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            10465000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            10475000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            10485000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            10495000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            10505000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            10515000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=10515000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            10525000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            10525000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            10575000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            10585000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            10595000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            10605000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            10615000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            10625000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            10635000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            10645000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            10655000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[MON] t=            10705000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC35                                 TC12: mid-instr resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC12]   run=2  reset_at_phase=-4  result=0x00               (clean)
+[PIPE] t=            10795000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            10805000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            10815000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            10825000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            10835000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            10845000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            10855000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=10855000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            10865000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            10865000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            10915000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            10925000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            10935000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            10945000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            10955000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            10965000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            10975000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            10985000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            10995000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=            11035000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            11045000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            11055000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            11065000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            11075000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=2
+[MON] t=            11105000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC36                                 TC12: mid-instr resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC12]   run=3  reset_at_phase=6  result=0x00               (clean)
+[PIPE] t=            11195000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            11205000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            11215000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            11225000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            11235000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            11245000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            11255000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=11255000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            11265000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            11265000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            11315000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            11325000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            11335000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            11345000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            11355000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            11365000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            11375000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            11385000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            11395000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[MON] t=            11445000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC37                                 TC12: mid-instr resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC12]   run=4  reset_at_phase=-2  result=0x00               (clean)
+[PIPE] t=            11535000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            11545000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            11555000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            11565000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            11575000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            11585000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            11595000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=11595000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            11605000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            11605000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            11655000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            11665000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            11675000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            11685000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            11695000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            11705000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            11715000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            11725000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            11735000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=            11775000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            11785000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[MON] t=            11815000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC38                                 TC12: mid-instr resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC12]   run=5  reset_at_phase=3  result=0x00               (clean)
+[PIPE] t=            11905000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            11915000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            11925000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            11935000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            11945000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            11955000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            11965000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=11965000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            11975000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            11975000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            12025000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            12035000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            12045000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            12055000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            12065000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            12075000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            12085000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            12095000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            12105000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[MON] t=            12155000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC39                                 TC12: mid-instr resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC12]   run=6  reset_at_phase=-1  result=0x00               (clean)
+[PIPE] t=            12245000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            12255000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            12265000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            12275000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            12285000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            12295000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            12305000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=12305000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            12315000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            12315000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            12365000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            12375000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            12385000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            12395000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            12405000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            12415000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            12425000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            12435000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            12445000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=            12485000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            12495000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            12505000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[MON] t=            12535000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC40                                 TC12: mid-instr resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC12]   run=7  reset_at_phase=4  result=0x00               (clean)
+[PIPE] t=            12625000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            12635000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            12645000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            12655000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            12665000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            12675000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            12685000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=12685000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            12695000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            12695000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            12745000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            12755000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            12765000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            12775000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            12785000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            12795000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            12805000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            12815000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            12825000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=            12865000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            12875000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            12885000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            12895000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[MON] t=            12925000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC41                                 TC12: mid-instr resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC12]   run=8  reset_at_phase=5  result=0x00               (clean)
+[PIPE] t=            13015000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            13025000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            13035000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            13045000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            13055000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            13065000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            13075000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=13075000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            13085000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            13085000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            13135000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            13145000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            13155000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            13165000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            13175000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            13185000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            13195000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            13205000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            13215000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[MON] t=            13265000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC42                                 TC12: mid-instr resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC12]   run=9  reset_at_phase=-3  result=0x00               (clean)
+[PIPE] t=            13355000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            13365000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            13375000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            13385000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            13395000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            13405000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            13415000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=13415000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            13425000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            13425000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            13475000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            13485000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            13495000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            13505000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            13515000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            13525000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            13535000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            13545000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            13555000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[MON] t=            13605000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC43                                 TC12: mid-instr resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC12]   run=10  reset_at_phase=-4  result=0x00               (clean)
+[PIPE] t=            13695000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            13705000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            13715000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            13725000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            13735000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            13745000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            13755000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=13755000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            13765000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            13765000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            13815000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            13825000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            13835000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            13845000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            13855000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            13865000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            13875000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            13885000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            13895000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[MON] t=            13945000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC44                                 TC12: mid-instr resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC12]   run=11  reset_at_phase=-2  result=0x00               (clean)
+[PIPE] t=            14035000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            14045000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            14055000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            14065000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            14075000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            14085000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            14095000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=14095000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            14105000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            14105000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            14155000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            14165000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            14175000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            14185000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            14195000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            14205000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            14215000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            14225000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            14235000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=            14275000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            14285000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            14295000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            14305000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            14315000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=2
+[MON] t=            14345000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC45                                 TC12: mid-instr resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC12]   run=12  reset_at_phase=6  result=0x00               (clean)
+[PIPE] t=            14435000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            14445000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            14455000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            14465000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            14475000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            14485000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            14495000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=14495000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            14505000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            14505000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            14555000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            14565000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            14575000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            14585000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            14595000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            14605000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            14615000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            14625000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            14635000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[MON] t=            14685000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC46                                 TC12: mid-instr resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC12]   run=13  reset_at_phase=-2  result=0x00               (clean)
+[PIPE] t=            14775000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            14785000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            14795000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            14805000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            14815000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            14825000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            14835000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=14835000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            14845000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            14845000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            14895000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            14905000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            14915000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            14925000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            14935000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            14945000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            14955000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            14965000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            14975000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[MON] t=            15025000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC47                                 TC12: mid-instr resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC12]   run=14  reset_at_phase=-4  result=0x00               (clean)
+[PIPE] t=            15115000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            15125000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            15135000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            15145000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            15155000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            15165000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            15175000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=15175000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            15185000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            15185000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            15235000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            15245000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            15255000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            15265000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            15275000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            15285000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            15295000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            15305000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            15315000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=            15355000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            15365000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            15375000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            15385000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[MON] t=            15415000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC48                                 TC12: mid-instr resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC12]   run=15  reset_at_phase=5  result=0x00               (clean)
+
+--- TC13 [v3]: Directed phase coverage closer (phase 1-8) ---
+[PIPE] t=            15505000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            15515000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            15525000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            15535000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            15545000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            15555000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            15565000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=15565000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            15575000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            15575000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            15625000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            15635000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            15645000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            15655000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            15665000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            15675000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            15685000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            15695000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            15705000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[MON] t=            15765000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC49                            TC13: directed phase resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC13]   phase=1  result=0x00                (clean)
+[PIPE] t=            15855000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            15865000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            15875000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            15885000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            15895000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            15905000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            15915000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=15915000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            15925000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            15925000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            15975000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            15985000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            15995000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            16005000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            16015000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            16025000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            16035000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            16045000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            16055000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=            16095000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[MON] t=            16125000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC50                            TC13: directed phase resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC13]   phase=2  result=0x00                (clean)
+[PIPE] t=            16215000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            16225000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            16235000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            16245000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            16255000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            16265000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            16275000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=16275000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            16285000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            16285000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            16335000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            16345000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            16355000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            16365000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            16375000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            16385000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            16395000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            16405000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            16415000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=            16455000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            16465000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[MON] t=            16495000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC51                            TC13: directed phase resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC13]   phase=3  result=0x00                (clean)
+[PIPE] t=            16585000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            16595000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            16605000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            16615000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            16625000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            16635000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            16645000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=16645000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            16655000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            16655000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            16705000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            16715000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            16725000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            16735000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            16745000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            16755000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            16765000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            16775000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            16785000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=            16825000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            16835000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            16845000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[MON] t=            16875000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC52                            TC13: directed phase resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC13]   phase=4  result=0x00                (clean)
+[PIPE] t=            16965000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            16975000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            16985000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            16995000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            17005000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            17015000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            17025000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=17025000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            17035000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            17035000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            17085000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            17095000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            17105000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            17115000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            17125000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            17135000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            17145000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            17155000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            17165000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=            17205000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            17215000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            17225000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            17235000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[MON] t=            17265000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC53                            TC13: directed phase resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC13]   phase=5  result=0x00                (clean)
+[PIPE] t=            17355000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            17365000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            17375000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            17385000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            17395000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            17405000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            17415000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=17415000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            17425000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            17425000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            17475000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            17485000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            17495000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            17505000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            17515000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            17525000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            17535000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            17545000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            17555000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=            17595000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            17605000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            17615000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            17625000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            17635000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=2
+[MON] t=            17665000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC54                            TC13: directed phase resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC13]   phase=6  result=0x00                (clean)
+[PIPE] t=            17755000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            17765000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            17775000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            17785000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            17795000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            17805000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            17815000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=17815000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            17825000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            17825000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            17875000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            17885000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            17895000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            17905000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            17915000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            17925000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            17935000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            17945000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            17955000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=            17995000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            18005000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            18015000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            18025000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            18035000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=            18045000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=2
+[MON] t=            18075000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC55                            TC13: directed phase resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC13]   phase=7  result=0x00                (clean)
+[PIPE] t=            18165000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            18175000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            18185000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            18195000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            18205000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            18215000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=0 | PC=0
+[PIPE] t=            18225000 | phase=7 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[ASSERT FAIL A7] t=18225000 Enable_Write_Data HIGH at phase=7 (must be 8 or 9)
+[SCB PASS] write-back #0: got=0x3c  exp=0x3c
+[PIPE] t=            18235000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=0
+[MON] t=            18235000 | cpu_en=1 | databus=0x3c | result_out=0x3c(  60) |  write-back in gated window
+[PIPE] t=            18285000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            18295000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            18305000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            18315000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            18325000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            18335000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=1
+[PIPE] t=            18345000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=1
+[PIPE] t=            18355000 | phase=8 | cpu_en=1 | ALU=0 WrEn=1 RdA=0 RdB=0 | PC=1
+[SCB PASS] write-back #1: got=0x82  exp=0x82
+[MON] t=            18365000 | cpu_en=0 | databus=0x46 | result_out=0x82(-126) | write-back in settle window
+[PIPE] t=            18405000 | phase=1 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            18415000 | phase=2 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            18425000 | phase=3 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            18435000 | phase=4 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[PIPE] t=            18445000 | phase=5 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=            18455000 | phase=6 | cpu_en=1 | ALU=1 WrEn=0 RdA=0 RdB=1 | PC=2
+[PIPE] t=            18465000 | phase=7 | cpu_en=1 | ALU=0 WrEn=0 RdA=0 RdB=0 | PC=2
+[MON] t=            18495000 | cpu_en=0 | databus=0x00 | result_out=0x00(   0) | write-back in settle window
+[PASS] TC56                            TC13: directed phase resetÿÿÿ’ R0=0x00  exp=0x00(   0)  got=0x00(   0)
+[TC13]   phase=8  result=0x00                (clean)
+
+================================================================
+  SUMMARY
+  Total  : 92
+  PASS   : 56
+  FAIL   : 36
+  STATUS : 36 FAILED
+================================================================
+  YEL4 - HLT freezes PC                      : TC07
+  YEL5 - Data_in_SRC/DEST rename             : compile-time
+  YEL6 - Single master_phase bus              : compile-time
+  ORG7 - instruction_*.v names               : compile-time
+  ORG8 - check_* real status                  : TC10
+  [v2] Random reset sweep                     : TC12
+  [v2] HLT write-back guard                   : A6
+  [v3] Pipeline phase monitor                 : PIPE_MON
+  [v3] Write-back window assertion            : A7
+  [v3] Directed phase coverage closer         : TC13
+  [v3] Write-back phase coverage bins         : cov_wb_phase
+================================================================
+
+================================================================
+  [v2] FUNCTIONAL COVERAGE REPORT
+================================================================
+
+  -- Opcode Execution Coverage --
+  OP[2:0]  Mnemonic    Hits  Status
+  ------  --------    ----  ------
+  3'b000        MOV  36          HIT
+  3'b001        ADD  34          HIT
+  3'b010        SUB  12          HIT
+  3'b011        ABS  10          HIT
+  3'b100        NOT  8           HIT
+  3'b101        AND  7           HIT
+  3'b110        NEG  6           HIT
+  3'b111        HLT  7           HIT
+  Opcode coverage: 8/8 bins hit (100%)
+
+  -- Reset-Phase Coverage (mid-instruction reset) --
+     Phase    Hits  Status
+     -----    ----  ------
+  CLK1      1           HIT
+  CLK2      1           HIT
+  CLK3      2           HIT
+  CLK4      2           HIT
+  CLK5      4           HIT
+  CLK6      4           HIT
+  CLK7      1           HIT
+  CLK8      1           HIT
+  Reset-phase coverage: 8/8 bins hit (100%)
+
+  -- cpu_en Gate Coverage --
+  cpu_en gate test hit count: 1      [HIT]
+
+  -- [v3] Write-back Phase Coverage --
+  (Enable_Write_Data must only fire at phase 8 or 9)
+     Phase    Hits  Status
+     -----    ----  ------
+  phase7     36      [ILLEGAL] <<
+  phase8     111             [OK]
+  Write-back window (ph8+ph9 total hits): 111
+
+  -- Scoreboard Summary --
+  SCB fail count (independent): 0                 [CLEAN]
+================================================================
+$finish called at time : 18517 ns : File "C:/Users/Admin/.Xilinx/example/cpu_CLK1-9_7led/cpu_CLK1-9_7led.srcs/sim_1/new/tb_CPU_full_2.v" Line 795
